@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+
+# Virtualenv
+/bin
+/include
+/lib
+/pyvenv.cfg
+
+# Environment variables
+.env
+
+# Credentials
+token.pickle
+
+# Data files
+recent_emails.json
+
+# Pip installer
+get-pip.py
+
+# Secrets
+/secrets

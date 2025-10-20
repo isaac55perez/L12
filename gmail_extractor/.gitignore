@@ -21,4 +21,4 @@ recent_emails.json
 get-pip.py
 
 # Secrets
-/secrets
+../secrets/

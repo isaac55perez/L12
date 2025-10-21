@@ -15,7 +15,7 @@ import re
 SCOPES = ['https://www.googleapis.com/auth/gmail.readonly']
 
 class GmailClient:
-    def __init__(self, credentials_file='../secrets/client_secret_564310052883-tt62d2chr6j00tgt20om0cbqav3siis7.apps.googleusercontent.com.json'):
+    def __init__(self, credentials_file='secrets/client_secret_564310052883-tt62d2chr6j00tgt20om0cbqav3siis7.apps.googleusercontent.com.json'):
         self.credentials_file = credentials_file
         self.service = None
         self.authenticate()
@@ -150,6 +150,13 @@ class GmailClient:
         """Get unread emails"""
         query = 'is:unread'
         return self.search_emails(query, max_results)
+
+    def get_email_details(self, message_id):
+        """Get detailed information about a specific email"""
+        details = self.get_message_details(message_id)
+        if details:
+            return self.extract_message_data(details)
+        return None
     
     def print_email_summary(self, emails):
         """Print a summary of emails"""
